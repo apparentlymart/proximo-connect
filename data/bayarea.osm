@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' generator='JOSM'>
+  <node id='-48230' action='modify' visible='true' lat='37.79317060544303' lon='-122.39639691876195'>
+    <tag k='name' v='Embarcadero Station Platform 1' />
+    <tag k='railway' v='station' />
+    <tag k='type' v='stop' />
+  </node>
+  <node id='-48229' action='modify' visible='true' lat='37.79323444710812' lon='-122.39649974105747'>
+    <tag k='name' v='Embarcadero Station Platform 2' />
+    <tag k='railway' v='station' />
+    <tag k='type' v='stop' />
+  </node>
   <node id='-46816' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7754399' lon='-122.22533'>
     <tag k='highway' v='bus_stop' />
     <tag k='name' v='Fruitvale Bart Station' />
@@ -34135,9 +34145,9 @@
     <tag k='name' v='Van Ness Station OB' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-33162' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7932299' lon='-122.39654'>
+  <node id='-33162' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7932299' lon='-122.39654'>
     <tag k='highway' v='bus_stop' />
-    <tag k='name' v='Embarcadero Station OB' />
+    <tag k='name' v='Embarcadero Station Outbound' />
     <tag k='type' v='stop' />
   </node>
   <node id='-33160' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.72083' lon='-122.4464699'>
@@ -34150,9 +34160,9 @@
     <tag k='name' v='San Jose Ave &amp; Geneva Ave' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-33156' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7931399' lon='-122.3964'>
+  <node id='-33156' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7931399' lon='-122.3964'>
     <tag k='highway' v='bus_stop' />
-    <tag k='name' v='Embarcadero Station Arr' />
+    <tag k='name' v='Embarcadero Station Inbound' />
     <tag k='type' v='stop' />
   </node>
   <node id='-33154' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7887' lon='-122.4019199'>
@@ -34675,6 +34685,151 @@
     <tag k='name' v='Jones St &amp; Beach St' />
     <tag k='type' v='stop' />
   </node>
+  <relation id='-48247' visible='true'>
+    <member type='node' ref='-39236' role='' />
+    <member type='node' ref='-37414' role='' />
+    <member type='node' ref='-39980' role='' />
+    <member type='node' ref='-39992' role='' />
+    <member type='node' ref='-39234' role='' />
+    <member type='node' ref='-37390' role='' />
+    <member type='node' ref='-37438' role='' />
+    <member type='node' ref='-37434' role='' />
+    <member type='node' ref='-37440' role='' />
+    <member type='node' ref='-38966' role='' />
+    <member type='node' ref='-37464' role='' />
+    <member type='node' ref='-39222' role='' />
+    <member type='node' ref='-37412' role='' />
+    <member type='node' ref='-38964' role='' />
+    <member type='node' ref='-38898' role='' />
+    <member type='node' ref='-38900' role='' />
+    <member type='node' ref='-38522' role='' />
+    <member type='node' ref='-38962' role='' />
+    <member type='node' ref='-38476' role='' />
+    <member type='node' ref='-38902' role='' />
+    <member type='node' ref='-38960' role='' />
+    <member type='node' ref='-34754' role='' />
+    <member type='node' ref='-34980' role='' />
+    <member type='node' ref='-38904' role='' />
+    <member type='node' ref='-34982' role='' />
+    <member type='node' ref='-38906' role='' />
+    <member type='node' ref='-36802' role='' />
+    <member type='node' ref='-34752' role='' />
+    <member type='node' ref='-34984' role='' />
+    <member type='node' ref='-36800' role='' />
+    <member type='node' ref='-38958' role='' />
+    <member type='node' ref='-36804' role='' />
+    <member type='node' ref='-33728' role='' />
+    <member type='node' ref='-33596' role='' />
+    <member type='node' ref='-38908' role='' />
+    <member type='node' ref='-38954' role='' />
+    <member type='node' ref='-38912' role='' />
+    <member type='node' ref='-33888' role='' />
+    <member type='node' ref='-38910' role='' />
+    <member type='node' ref='-38952' role='' />
+    <member type='node' ref='-38916' role='' />
+    <member type='node' ref='-38258' role='' />
+    <member type='node' ref='-33828' role='' />
+    <member type='node' ref='-38950' role='' />
+    <member type='node' ref='-38914' role='' />
+    <member type='node' ref='-38356' role='' />
+    <member type='node' ref='-37576' role='' />
+    <member type='node' ref='-38918' role='' />
+    <member type='node' ref='-38948' role='' />
+    <member type='node' ref='-37490' role='' />
+    <member type='node' ref='-35400' role='' />
+    <member type='node' ref='-38946' role='' />
+    <member type='node' ref='-35378' role='' />
+    <member type='node' ref='-34130' role='' />
+    <member type='node' ref='-38944' role='' />
+    <member type='node' ref='-34046' role='' />
+    <member type='node' ref='-38920' role='' />
+    <member type='node' ref='-36040' role='' />
+    <member type='node' ref='-38922' role='' />
+    <member type='node' ref='-36034' role='' />
+    <member type='node' ref='-38942' role='' />
+    <member type='node' ref='-32990' role='' />
+    <member type='node' ref='-33020' role='' />
+    <member type='node' ref='-33148' role='' />
+    <member type='node' ref='-39224' role='' />
+    <member type='node' ref='-38940' role='' />
+    <member type='node' ref='-38924' role='' />
+    <member type='node' ref='-33164' role='' />
+    <tag k='name' v='Van Ness Ave' />
+    <tag k='type' v='street' />
+  </relation>
+  <relation id='-48244' visible='true'>
+    <member type='node' ref='-34358' role='' />
+    <member type='node' ref='-32978' role='' />
+    <member type='node' ref='-33032' role='' />
+    <member type='node' ref='-34360' role='' />
+    <member type='node' ref='-35202' role='' />
+    <member type='node' ref='-35166' role='' />
+    <member type='node' ref='-34362' role='' />
+    <member type='node' ref='-35038' role='' />
+    <member type='node' ref='-34364' role='' />
+    <member type='node' ref='-34366' role='' />
+    <member type='node' ref='-34422' role='' />
+    <member type='node' ref='-37430' role='' />
+    <member type='node' ref='-38928' role='' />
+    <member type='node' ref='-39886' role='' />
+    <member type='node' ref='-38932' role='' />
+    <member type='node' ref='-37360' role='' />
+    <member type='node' ref='-39960' role='' />
+    <member type='node' ref='-34930' role='' />
+    <member type='node' ref='-39962' role='' />
+    <member type='node' ref='-34804' role='' />
+    <member type='node' ref='-38930' role='' />
+    <member type='node' ref='-37432' role='' />
+    <member type='node' ref='-40040' role='' />
+    <member type='node' ref='-33282' role='' />
+    <member type='node' ref='-33230' role='' />
+    <member type='node' ref='-33514' role='' />
+    <member type='node' ref='-33564' role='' />
+    <member type='node' ref='-40052' role='' />
+    <tag k='name' v='4th St' />
+    <tag k='type' v='street' />
+  </relation>
+  <relation id='-48241' visible='true'>
+    <member type='node' ref='-34446' role='' />
+    <member type='node' ref='-34582' role='' />
+    <member type='node' ref='-34444' role='' />
+    <member type='node' ref='-32954' role='' />
+    <member type='node' ref='-33056' role='' />
+    <member type='node' ref='-32956' role='' />
+    <member type='node' ref='-33054' role='' />
+    <member type='node' ref='-33052' role='' />
+    <member type='node' ref='-32958' role='' />
+    <member type='node' ref='-33050' role='' />
+    <member type='node' ref='-32960' role='' />
+    <member type='node' ref='-32962' role='' />
+    <member type='node' ref='-33048' role='' />
+    <member type='node' ref='-33046' role='' />
+    <member type='node' ref='-32964' role='' />
+    <member type='node' ref='-33044' role='' />
+    <member type='node' ref='-32966' role='' />
+    <member type='node' ref='-40146' role='' />
+    <member type='node' ref='-40162' role='' />
+    <member type='node' ref='-37454' role='' />
+    <member type='node' ref='-37484' role='' />
+    <member type='node' ref='-40164' role='' />
+    <member type='node' ref='-40144' role='' />
+    <member type='node' ref='-33242' role='' />
+    <member type='node' ref='-33288' role='' />
+    <member type='node' ref='-33286' role='' />
+    <member type='node' ref='-33244' role='' />
+    <member type='node' ref='-40142' role='' />
+    <member type='node' ref='-40166' role='' />
+    <tag k='name' v='Embarcadero' />
+    <tag k='type' v='street' />
+  </relation>
+  <relation id='-48225' action='modify' visible='true'>
+    <member type='node' ref='-33162' role='' />
+    <member type='node' ref='-33156' role='' />
+    <member type='node' ref='-48230' role='' />
+    <member type='node' ref='-48229' role='' />
+    <tag k='name' v='Embarcadero' />
+    <tag k='type' v='station' />
+  </relation>
   <relation id='-48220' visible='true'>
     <member type='node' ref='-40150' role='' />
     <member type='node' ref='-36204' role='' />
@@ -34722,7 +34877,7 @@
     <tag k='name' v='Church St' />
     <tag k='type' v='street' />
   </relation>
-  <relation id='-48217' visible='true'>
+  <relation id='-48217' action='modify' visible='true'>
     <member type='node' ref='-37678' role='' />
     <member type='node' ref='-37748' role='' />
     <member type='node' ref='-37750' role='' />
