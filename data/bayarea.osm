@@ -10715,12 +10715,12 @@
     <tag k='name' v='23rd Av &amp; 29th Av' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-42534' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7903499' lon='-122.39558'>
+  <node id='-42534' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.79009234652685' lon='-122.39260549787886'>
     <tag k='highway' v='bus_stop' />
     <tag k='name' v='San Francisco Terminal' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-42532' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7903499' lon='-122.39558'>
+  <node id='-42532' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.79008871900689' lon='-122.39259172703571'>
     <tag k='highway' v='bus_stop' />
     <tag k='name' v='San Francisco Terminal' />
     <tag k='type' v='stop' />
@@ -11185,7 +11185,7 @@
     <tag k='name' v='5th St &amp; Market St' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-42346' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7903499' lon='-122.39558'>
+  <node id='-42346' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.79001616856712' lon='-122.39282124108827'>
     <tag k='highway' v='bus_stop' />
     <tag k='name' v='San Francisco Terminal' />
     <tag k='type' v='stop' />
@@ -14070,7 +14070,7 @@
     <tag k='name' v='San Francisco Terminal' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-41192' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7903499' lon='-122.39558'>
+  <node id='-41192' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.790193917017945' lon='-122.39303698429768'>
     <tag k='highway' v='bus_stop' />
     <tag k='name' v='San Francisco Terminal' />
     <tag k='type' v='stop' />
@@ -14410,7 +14410,7 @@
     <tag k='name' v='Christie St &amp; Lyons Restuarant' />
     <tag k='type' v='stop' />
   </node>
-  <node id='-41056' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.7903499' lon='-122.39558'>
+  <node id='-41056' action='modify' timestamp='2010-08-17T04:30:04Z' visible='true' lat='37.790201172047496' lon='-122.39303698429764'>
     <tag k='highway' v='bus_stop' />
     <tag k='name' v='San Francisco Terminal' />
     <tag k='type' v='stop' />
@@ -34685,6 +34685,27 @@
     <tag k='name' v='Jones St &amp; Beach St' />
     <tag k='type' v='stop' />
   </node>
+  <relation id='-48250' action='modify' visible='true'>
+    <member type='node' ref='-39966' role='' />
+    <member type='node' ref='-40114' role='' />
+    <member type='node' ref='-39868' role='' />
+    <member type='node' ref='-39870' role='' />
+    <member type='node' ref='-40116' role='' />
+    <member type='node' ref='-38498' role='' />
+    <member type='node' ref='-38368' role='' />
+    <member type='node' ref='-38500' role='' />
+    <member type='node' ref='-34120' role='' />
+    <member type='node' ref='-39964' role='' />
+    <member type='node' ref='-38240' role='' />
+    <member type='node' ref='-34164' role='' />
+    <member type='node' ref='-42346' role='' />
+    <member type='node' ref='-41192' role='' />
+    <member type='node' ref='-41056' role='' />
+    <member type='node' ref='-42532' role='' />
+    <member type='node' ref='-42534' role='' />
+    <tag k='name' v='Transbay Temporary Terminal' />
+    <tag k='type' v='station' />
+  </relation>
   <relation id='-48247' visible='true'>
     <member type='node' ref='-39236' role='' />
     <member type='node' ref='-37414' role='' />
