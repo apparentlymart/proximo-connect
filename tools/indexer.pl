@@ -3,6 +3,9 @@ use strict;
 use warnings;
 
 use XML::XPath;
+use JSON::Any;
+use File::Path;
+use FindBin;
 
 my %nodes = ();
 my %relations = ();
@@ -114,15 +117,57 @@ foreach my $relation (values %relations) {
     }
 }
 
-foreach my $street (@{$relations_by_type{street}}) {
-    print "$street->{tags}{name}\n";
-    foreach my $stop (@{$street->{nodes}}) {
-        print " * $stop->{tags}{name}\n";
-    }
-}
+# Now produce JSON files representing this data sliced in useful ways.
+chdir("$FindBin::Bin/../out");
+my $json = JSON::Any->new(pretty => 1);
 
-#use Data::Dumper;
-#print Data::Dumper::Dumper($relations_by_type{station});
+foreach my $street (@{$relations_by_type{street}}) {
+    my $id = $street->{id};
+
+    my $dict = street_as_dict($street);
+
+    my %street_streets;
+    my %street_runs;
+
+    my $stops_dict = {};
+    my $stops = $stops_dict->{items} = [];
+    foreach my $stop (@{$street->{nodes_by_type}{stop}}) {
+        push @$stops, stop_as_dict($stop);
+
+        foreach my $other_street (@{$stop->{relations_by_type}{street}}) {
+            my $other_id = $other_street->{id};
+            next if $id == $other_id;
+            $street_streets{$other_id} = $other_street;
+        }
+
+        foreach my $run (@{$stop->{relations_by_type}{run}}) {
+            my $run_id = $run->{id};
+            $street_runs{$run_id} = $run;
+        }
+    }
+    write_json("streets/$id/stops", $stops_dict);
+
+    my @streets = sort { $a->{tags}{name} cmp $b->{tags}{name} } values %street_streets;
+    my $streets_dict = { items => [ map { street_as_dict($_) } @streets ] };
+    write_json("streets/$id/streets", $streets_dict);
+
+    my $runs_dict = {};
+    foreach my $run (values %street_runs) {
+        # There should only ever actually be one of these, but let's loop anyway to make sure.
+        foreach my $route (@{$run->{parent_relations_by_type}{route}}) {
+            my $route_id = $route->{id};
+            unless ($runs_dict->{$route->{id}}) {
+                $runs_dict->{$route_id} = {};
+                $runs_dict->{$route_id}{route} = route_as_dict($route);
+                $runs_dict->{$route_id}{runs} = [];
+            }
+            push @{$runs_dict->{$route_id}{runs}}, run_as_dict($run);
+        }
+    }
+    write_json("streets/$id/runs", $runs_dict);
+
+    write_json("streets/$id", $dict);
+}
 
 sub node {
     my ($id) = @_;
@@ -136,6 +181,63 @@ sub relation {
 
     return $relations{$id} if exists($relations{$id});
     return $relations{$id} = Relation->new($id);
+}
+
+sub write_json {
+    my ($fn, $dict) = @_;
+
+    my $dir = $fn;
+    $dir =~ s!/[^/]+$!!;
+    File::Path::mkpath($dir);
+
+    my $enc = $json->encode($dict);
+    open(OUT, '>', $fn.".json") or die "Failed to open $fn for writing: $!\n";
+    print OUT $enc;
+    close(OUT);
+}
+
+sub stop_as_dict {
+    my ($stop) = @_;
+
+    return {
+        id => $stop->{id},
+        name => $stop->{tags}{name},
+        latitude => $stop->{lat},
+        longitude => $stop->{lon},
+    };
+}
+
+sub street_as_dict {
+    my ($street) = @_;
+
+    return {
+        id => $street->{id},
+        name => $street->{tags}{name},
+    };
+}
+
+sub route_as_dict {
+    my ($route) = @_;
+
+    my ($agency) = @{$route->{parent_relations_by_type}{agency}};
+    my $agency_id = $agency->{id} if $agency;
+
+    return {
+        id => $route->{id},
+        name => $route->{tags}{name},
+        (exists($route->{tags}{'pb:id'}) ? (pb_id => $route->{tags}{'pb:id'}) : ()),
+        agency_id => $agency_id,
+    };
+}
+
+sub run_as_dict {
+    my ($run) = @_;
+
+    return {
+        id => $run->{id},
+        name => $run->{tags}{name},
+        (exists($run->{tags}{'pb:id'}) ? (pb_id => $run->{tags}{'pb:id'}) : ()),
+    };
 }
 
 package Node;
