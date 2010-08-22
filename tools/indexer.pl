@@ -90,6 +90,30 @@ my %relations_by_type = ();
     my $relation_elems = $xp->find("/osm/node");
 }
 
+# 2nd pass: populate the by_type members now that we know we have
+# all of the type tags loaded.
+foreach my $relation (values %relations) {
+    my $relation_type = $relation->{tags}{type};
+    foreach my $node (@{$relation->{nodes}}) {
+        my $node_type = $node->{tags}{type};
+        $relation->{nodes_by_type}{$node_type} ||= [];
+        push @{$relation->{nodes_by_type}{$node_type}}, $node;
+        if (defined($relation_type)) {
+            $node->{relations_by_type}{$relation_type} ||= [];
+            push @{$node->{relations_by_type}{$relation_type}}, $relation;
+        }
+    }
+    foreach my $child_relation (@{$relation->{child_relations}}) {
+        my $child_relation_type = $child_relation->{tags}{type};
+        $relation->{child_relations_by_type}{$child_relation_type} ||= [];
+        push @{$relation->{child_relations_by_type}{$child_relation_type}}, $child_relation;
+        if (defined($relation_type)) {
+            $child_relation->{parent_relations_by_type}{$relation_type} ||= [];
+            push @{$child_relation->{parent_relations_by_type}{$relation_type}}, $relation;
+        }
+    }
+}
+
 foreach my $street (@{$relations_by_type{street}}) {
     print "$street->{tags}{name}\n";
     foreach my $stop (@{$street->{nodes}}) {
